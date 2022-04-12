@@ -15,9 +15,9 @@ class Service_outfit extends Model
         return $this->belongsTo('App\Service_user');
     }
     
-    Public function service_outfits_image()
+    Public function service_outfit_image()
     {
         // Profileモデルのデータを引っ張てくる
-        return $this->hasOne('App\Service_outfits_image');
+        return $this->hasOne('App\Service_outfit_image');
     }
 }

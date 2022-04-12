@@ -15,8 +15,8 @@ class Service_outfit_image_like extends Model
         return $this->belongsTo('App\User');
     }
     
-    public function service_outfits_image()
+    public function service_outfit_image()
     {
-        return $this->belongsTo('App\Service_outfits_image');
+        return $this->belongsTo('App\Service_outfit_image');
     }
 }

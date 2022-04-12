@@ -10,8 +10,8 @@ class Category extends Model
         'name'
     ];
     
-    public function service_outfits_images()   
+    public function service_outfit_images()   
     {
-        return $this->hasMany('App\Service_outfits_image');  
+        return $this->hasMany('App\Service_outfit_image');  
     }
 }
