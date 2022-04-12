@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service_outfit extends Model
 {
+    protected $fillable = [
+        'title', 'content', 'service_outfit_id'
+    ];
+    
     public function service_user()
     {
         return $this->belongsTo('App\Service_user');

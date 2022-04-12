@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Story extends Model
 {
+    protected $fillable = [
+        'title', 'content', 'img_name', 'service_user_id'
+    ];
+    
     public function comment()
     {
         // Profileモデルのデータを引っ張てくる
