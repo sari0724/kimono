@@ -10,6 +10,15 @@ class Service_user extends Model
         'company', 'email', 'password', 'img_name'
     ];
     
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+    
     public function stories()   
     {
         return $this->hasMany('App\Story');  
