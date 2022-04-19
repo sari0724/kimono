@@ -23,6 +23,9 @@ class RedirectIfAuthenticated
             if($guard == 'serviceuser') return redirect(RouteServiceProvider::SERVICEUSER_HOME);
             return redirect(RouteServiceProvider::HOME);
         }
+        
+        if (Auth::guard()->check()) return redirect(RouteServiceProvider::HOME);
+        if (Auth::guard('serviceuser')->check()) return redirect(RouteServiceProvider::SERVICEUSER_HOME);
 
         return $next($request);
     }
