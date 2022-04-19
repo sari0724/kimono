@@ -46,6 +46,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
+        //Loginメソッドは"lluminate\Foundation\Auth\AuthenticatesUsers"に記載
         $this->middleware('guest')->except('logout');
     }
 }
