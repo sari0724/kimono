@@ -1,21 +1,23 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\ServiceUser;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ServiceUserHomeController extends Controller
 {
     /**
      * Create a new controller instance.
      *
      * @return void
      */
+     //ユーザのみアクセス可能
      //このmiddlewareのauth設定により、HomeControllerを経由して行われる処理は全て認証によるアクセスの制限が行われる
      //middlewareのauthについては"App/Http/Kamel"に記載
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:serviceuser'); 
     }
 
     /**
@@ -25,6 +27,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('serviceuser.home');
     }
 }

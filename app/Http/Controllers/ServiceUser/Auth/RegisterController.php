@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\ServiceUsers\Auth;
+namespace App\Http\Controllers\ServiceUser\Auth;
 
+use App\ServiceUser;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -24,9 +25,16 @@ class RegisterController extends Controller
 
     use RegistersUsers;
     
+    //上書き
     public function showRegistrationForm()
     {
-        return view('serviceusers.auth.register');
+        return view('serviceuser.auth.register');
+    }
+    
+    //ユーザーをServiceUserに設定
+    protected function guard()
+    {
+        return Auth::guard('serviceuser');
     }
 
     /**
@@ -34,7 +42,8 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+     //リダイレクト先をServiceUser_homeに設定
+    protected $redirectTo = RouteServiceProvider::SERVICEUSER_HOME;
 
     /**
      * Create a new controller instance.
@@ -55,7 +64,7 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
+            'company' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -69,8 +78,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
+        return ServiceUser::create([
+            'company' => $data['company'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
