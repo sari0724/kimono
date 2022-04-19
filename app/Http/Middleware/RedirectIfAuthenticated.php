@@ -19,6 +19,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
+            //$guardの値がemployeeの場合はEMPLOYEE_HOMEである/employee/homeにリダイレクト
+            if($guard == 'serviceuser') return redirect(RouteServiceProvider::SERVICEUSER_HOME);
             return redirect(RouteServiceProvider::HOME);
         }
 

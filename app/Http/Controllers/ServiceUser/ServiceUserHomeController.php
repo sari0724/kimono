@@ -12,12 +12,10 @@ class ServiceUserHomeController extends Controller
      *
      * @return void
      */
-     //ユーザのみアクセス可能
-     //このmiddlewareのauth設定により、HomeControllerを経由して行われる処理は全て認証によるアクセスの制限が行われる
-     //middlewareのauthについては"App/Http/Kamel"に記載
+     //serviceuserのみアクセス可能
     public function __construct()
     {
-        $this->middleware('auth:serviceuser'); 
+        $this->middleware('guest:serviceuser')->except('logout');
     }
 
     /**

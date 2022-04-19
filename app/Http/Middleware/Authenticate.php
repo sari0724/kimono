@@ -15,6 +15,9 @@ class Authenticate extends Middleware
     protected function redirectTo($request)
     {
         if (! $request->expectsJson()) {
+            ///employee/*を設定すると/employee/homeからきたリクエストはtrue
+            if($request->is('serviceuser/*')) return route('serviceuser.login');
+            //認証されていないアカウントは全て"/login"に飛ばされる
             return route('login');
         }
     }
