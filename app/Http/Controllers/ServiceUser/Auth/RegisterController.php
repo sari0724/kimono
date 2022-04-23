@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\ServiceUser\Auth;
 
-use App\ServiceUser;
+use App\Service_user;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -23,7 +23,7 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+   
     
     //上書き
     public function showRegistrationForm()
@@ -36,6 +36,8 @@ class RegisterController extends Controller
     {
         return Auth::guard('serviceuser');
     }
+    
+    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.
@@ -79,7 +81,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return ServiceUser::create([
+        return Service_user::create([
             'company' => $data['company'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),

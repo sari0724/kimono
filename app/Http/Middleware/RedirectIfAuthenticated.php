@@ -25,8 +25,8 @@ class RedirectIfAuthenticated
         }
         
         ///employee/loginでログインしたユーザが/loginにアクセスできないよう設定
-        if (Auth::guard()->check()) return redirect(RouteServiceProvider::HOME);
-        if (Auth::guard('serviceuser')->check()) return redirect(RouteServiceProvider::SERVICEUSER_HOME);
+        //if (Auth::guard()->check()) return redirect(RouteServiceProvider::HOME);
+        //if (Auth::guard('serviceuser')->check()) return redirect(RouteServiceProvider::SERVICEUSER_HOME);
 
         return $next($request);
     }

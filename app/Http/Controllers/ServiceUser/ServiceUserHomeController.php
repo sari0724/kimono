@@ -15,7 +15,7 @@ class ServiceUserHomeController extends Controller
      //serviceuserのみアクセス可能
     public function __construct()
     {
-        $this->middleware('guest:serviceuser')->except('logout');
+        $this->middleware('auth:serviceuser')->except('logout');
     }
 
     /**

@@ -75,7 +75,7 @@ return [
         ],
         'serviceusers' => [
             'driver' => 'eloquent',
-            'model' => App\ServiceUser::class,
+            'model' => App\Service_user::class,
         ],
 
         // 'users' => [
