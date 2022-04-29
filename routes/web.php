@@ -18,6 +18,9 @@ Route::get('/', function () {
 });
 //Authファサードのroutesメソッドは"Vendor\laravel\Framework\Src\Illuminate\Support\Facades\Auth"に記載
 Auth::routes();
+
+Route::get('/useroutfit', 'UserOutfitController@index');
+
 //”/home”へのルーティング
 Route::get('/home', 'HomeController@index')->name('home');
 

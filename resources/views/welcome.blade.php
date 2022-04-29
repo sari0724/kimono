@@ -81,18 +81,31 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    キモノ織物
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                
+                <h2>サイトについて</h2>
+                <p>This is a sample.</p>
+                
+                <div class='useroutfits'>
+                    <div class='useroutfit'>
+                        <h2>Userコーデ</h2>
+                        <p>This is a sample body.</p>
+                    </div>
+                </div>
+                
+                <div class='serviceoutfits'>
+                    <div class='serviceoutfit'>
+                        <h2>ServiceUserコーデ</h2>
+                        <p>This is a sample body.</p>
+                    </div>
+                </div>
+                
+                <div class='stories'>
+                    <div class='story'>
+                        <h2>キモノ記事</h2>
+                        <p>This is a sample body.</p>
+                    </div>
                 </div>
             </div>
         </div>
