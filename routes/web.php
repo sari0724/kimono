@@ -22,6 +22,8 @@ Auth::routes();
 Route::get('/useroutfit', 'UserOutfitController@index');
 //”/useroutfit”へのルーティング
 Route::get('/serviceoutfit', 'ServiceOutfitController@index');
+//”/story”へのルーティング
+Route::get('/story', 'StoryController@index');
 
 //”/home”へのルーティング
 Route::get('/home', 'HomeController@index')->name('home');
