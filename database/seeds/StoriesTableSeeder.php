@@ -15,7 +15,7 @@ class StoriesTableSeeder extends Seeder
             'title' => '名無し',
             'content' => 'Nanashi',
             'img_name' => '',
-            'service_user_id' => '1',
+            'service_user_id' => 1,
             'created_at' => date('Y-m-d H:i:s'),
             'deleted_at' => date('Y-m-d H:i:s'),
             'updated_at' => date('Y-m-d H:i:s'),

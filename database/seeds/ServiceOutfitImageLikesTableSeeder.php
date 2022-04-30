@@ -12,8 +12,8 @@ class ServiceOutfitImageLikesTableSeeder extends Seeder
     public function run()
     {
         DB::table('service_outfit_image_likes')->insert([
-            'user_id' => '1',
-            'service_outfit_image_id' => '1',
+            'user_id' => 1,
+            'service_outfit_image_id' => 1,
         ]);
     }
 }

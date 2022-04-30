@@ -18,12 +18,6 @@ class UserOutfitController extends Controller
         return $useroutfit->get();
     }
     
-    /**
-     * User_outfit一覧を表示する
-     * 
-     * @param User_outfit User_outfitモデル
-     * @return array User_outfitモデルリスト
-     */
     public function show(User_outfit $useroutfit)
     {
         return view('useroutfit')->with(['useroutfit' => $useroutfit]);
@@ -32,5 +26,13 @@ class UserOutfitController extends Controller
     public function create()
     {
         return view('create');
+    }
+    
+    public function store(User_outfit $useroutfit, Request $request)
+    {
+        //dd($request->all());
+        $input = $request['useroutfit'];
+        $useroutfit->fill($input)->save();
+        return redirect('/useroutfits/' . $useroutfit->id);
     }
 }

@@ -18,7 +18,7 @@ Auth::routes();
 
 //UsereOutfit投稿へのルーティング
 Route::get('/useroutfits/create', 'UserOutfitController@create');
-//Route::post('/useroutfits', 'UserOutfitController@store');
+Route::post('/useroutfits', 'UserOutfitController@store');
 
 //UserOutfit一覧ページへのルーティング
 Route::get('/useroutfit', 'UserOutfitController@index');

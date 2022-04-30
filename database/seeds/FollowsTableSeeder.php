@@ -12,8 +12,8 @@ class FollowsTableSeeder extends Seeder
     public function run()
     {
         DB::table('follows')->insert([
-            'user_id' => '1',
-            'service_user_id' => '1',
+            'user_id' => 1,
+            'service_user_id' => 1,
         ]);
     }
 }
