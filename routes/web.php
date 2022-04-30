@@ -11,13 +11,12 @@
 |
 */
 
-//User
-//welcome.blade.phpを表示
-Route::get('/', function () {
-    return view('welcome');
-});
+//HomePageの"index.blade.php"を表示
+Route::get('/', 'HomeController@__index');
 //Authファサードのroutesメソッドは"Vendor\laravel\Framework\Src\Illuminate\Support\Facades\Auth"に記載
 Auth::routes();
+
+
 //”/useroutfit”へのルーティング
 Route::get('/useroutfit', 'UserOutfitController@index');
 //”/useroutfit”へのルーティング

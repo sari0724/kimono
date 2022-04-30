@@ -88,24 +88,30 @@
                 <p>This is a sample.</p>
                 
                 <div class='useroutfits'>
-                    <div class='useroutfit'>
-                        <h2>Userコーデ</h2>
-                        <p>This is a sample body.</p>
-                    </div>
+                    @foreach ($useroutfits as $useroutfit)
+                        <div class='useroutfit'>
+                            <h2>{{ $useroutfit->title }}</h2>
+                            <p>{{ $useroutfit->content }}</p>
+                        </div>
+                    @endforeach
                 </div>
                 
                 <div class='serviceoutfits'>
-                    <div class='serviceoutfit'>
-                        <h2>ServiceUserコーデ</h2>
-                        <p>This is a sample body.</p>
-                    </div>
+                    @foreach ($serviceoutfits as $serviceoutfit)
+                        <div class='serviceoutfit'>
+                            <h2>{{ $serviceoutfit->title }}</h2>
+                            <p>{{ $serviceoutfit->content }}</p>
+                        </div>
+                    @endforeach
                 </div>
                 
                 <div class='stories'>
-                    <div class='story'>
-                        <h2>キモノ記事</h2>
-                        <p>This is a sample body.</p>
-                    </div>
+                     @foreach ($stories as $story)
+                        <div class='story'>
+                            <h2>{{ $story->title }}</h2>
+                            <p>{{ $story->content }}</p>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

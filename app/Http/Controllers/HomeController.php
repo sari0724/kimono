@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User_outfit;
+use App\Service_outfit;
+use App\Story;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,5 +29,26 @@ class HomeController extends Controller
     public function index()
     {
         return view('home');
+    }
+    
+    /**
+     * User_outfit,Service_outfit,Story一覧を表示する
+     * 
+     * @param Service_outfit Service_outfitモデル
+     * @return array Service_outfitモデルリスト
+     */
+    public function __index() {
+        $useroutfit = User_outfit::Paginate(5, ['*'], 'useroutfit')
+            ->appends(['serviceoutfit' => \Request::get('serviceoutfit')]);
+        $serviceoutfit = Service_outfit::Paginate(5, ['*'], 'serviceoutfit')
+            ->appends(['useroutfit' => \Request::get('useroutfit')]);
+        $story = Story::Paginate(5, ['*'], 'story')
+            ->appends(['serviceoutfit' => \Request::get('serviceoutfit')]);
+
+        return view('index',[
+            'useroutfits' => $useroutfit,
+            'serviceoutfits' => $serviceoutfit,
+            'stories' => $story,
+        ]);
     }
 }
