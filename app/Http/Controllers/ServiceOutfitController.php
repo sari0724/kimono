@@ -28,9 +28,4 @@ class ServiceOutfitController extends Controller
     {
         return view('serviceoutfit')->with(['serviceoutfit' => $serviceoutfit]);
     }
-    
-    public function create()
-    {
-        return view('create');
-    }
 }

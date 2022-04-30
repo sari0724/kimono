@@ -28,4 +28,9 @@ class UserOutfitController extends Controller
     {
         return view('useroutfit')->with(['useroutfit' => $useroutfit]);
     }
+    
+    public function create()
+    {
+        return view('create');
+    }
 }

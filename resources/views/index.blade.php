@@ -84,7 +84,7 @@
                     キモノ織物
                 </div>
                 
-                <a class='create'>[<a href='/serviceoutfits/create'>create</a>]</a>
+                <a class='create'>[<a href='/useroutfits/create'>create</a>]</a>
                 
                 <h2>サイトについて</h2>
                 <p>This is a sample.</p>

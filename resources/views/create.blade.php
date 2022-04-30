@@ -81,15 +81,15 @@
             
             <div class='_content'>
                 <h1 class='_title m-b-md'>投稿</h1>
-                <form action="/serviceoutfits" method="POST">
+                <form action="/useroutfits" method="POST">
                     @csrf
                     <div class="title">
                         <h2>タイトル</h2>
-                        <input type="text" name="serviceoutfit[title]" placeholder="タイトル"/>
+                        <input type="text" name="useroutfit[title]" placeholder="タイトル"/>
                     </div>
                     <div class="content">
                         <h2>content</h2>
-                        <textarea name="serviceoutfit[content]" placeholder="今日も1日お疲れさまでした。"></textarea>
+                        <textarea name="useroutfit[content]" placeholder="今日も1日お疲れさまでした。"></textarea>
                     </div>
                     <input type="submit" value="保存"/>
                 </form>
