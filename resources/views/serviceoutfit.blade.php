@@ -79,48 +79,11 @@
                 </div>
             @endif
 
-            <div class="_content">
-                <div class="_title m-b-md">
-                    キモノ織物
-                </div>
-                
-                <a class='create'>[<a href='/serviceoutfits/create'>create</a>]</a>
-                
-                <h2>サイトについて</h2>
-                <p>This is a sample.</p>
-                
-                <div class='useroutfits'>
-                    @foreach ($useroutfits as $useroutfit)
-                        <div class='useroutfit'>
-                            <h2>
-                                <a href="/useroutfits/{{ $useroutfit->id }}">{{ $useroutfit->title }}</a>
-                            </h2>
-                            <p>{{ $useroutfit->content }}</p>
-                        </div>
-                    @endforeach
-                </div>
-                
-                <div class='serviceoutfits'>
-                    @foreach ($serviceoutfits as $serviceoutfit)
-                        <div class='serviceoutfit'>
-                            <h2>
-                                <a href="/serviceoutfits/{{ $serviceoutfit->id }}">{{ $serviceoutfit->title }}</a>
-                            </h2>
-                            <p>{{ $serviceoutfit->content }}</p>
-                        </div>
-                    @endforeach
-                </div>
-                
-                <div class='stories'>
-                     @foreach ($stories as $story)
-                        <div class='story'>
-                            <h2>
-                                <a href="/stories/{{ $story->id }}">{{ $story->title }}</a>
-                            </h2>
-                            <p>{{ $story->content }}</p>
-                        </div>
-                    @endforeach
-                </div>
+            <div class="serviceoutfit">
+                <h1 class="title">{{ $serviceoutfit->title }}</h1>
+                <p class='content'>{{ $serviceoutfit->content }}</p>
+                <p class='updated_at'>{{ $serviceoutfit->updated_at }}</p>
+                <a href="/">戻る</a>
             </div>
         </div>
     </body>

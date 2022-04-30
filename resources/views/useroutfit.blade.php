@@ -40,11 +40,11 @@
                 top: 18px;
             }
 
-            .content {
+            ._content {
                 text-align: center;
             }
 
-            .title {
+            ._title {
                 font-size: 84px;
             }
 
@@ -79,40 +79,11 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    キモノ織物
-                </div>
-                
-                <h2>サイトについて</h2>
-                <p>This is a sample.</p>
-                
-                <div class='useroutfits'>
-                    @foreach ($useroutfits as $useroutfit)
-                        <div class='useroutfit'>
-                            <h2>{{ $useroutfit->title }}</h2>
-                            <p>{{ $useroutfit->content }}</p>
-                        </div>
-                    @endforeach
-                </div>
-                
-                <div class='serviceoutfits'>
-                    @foreach ($serviceoutfits as $serviceoutfit)
-                        <div class='serviceoutfit'>
-                            <h2>{{ $serviceoutfit->title }}</h2>
-                            <p>{{ $serviceoutfit->content }}</p>
-                        </div>
-                    @endforeach
-                </div>
-                
-                <div class='stories'>
-                     @foreach ($stories as $story)
-                        <div class='story'>
-                            <h2>{{ $story->title }}</h2>
-                            <p>{{ $story->content }}</p>
-                        </div>
-                    @endforeach
-                </div>
+            <div class="useroutfit">
+                <h1 class="title">{{ $useroutfit->title }}</h1>
+                <p class='content'>{{ $useroutfit->content }}</p>
+                <p class='updated_at'>{{ $useroutfit->updated_at }}</p>
+                <a href="/">戻る</a>
             </div>
         </div>
     </body>

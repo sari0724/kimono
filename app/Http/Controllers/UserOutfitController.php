@@ -17,4 +17,15 @@ class UserOutfitController extends Controller
     {
         return $useroutfit->get();
     }
+    
+    /**
+     * User_outfit一覧を表示する
+     * 
+     * @param User_outfit User_outfitモデル
+     * @return array User_outfitモデルリスト
+     */
+    public function show(User_outfit $useroutfit)
+    {
+        return view('useroutfit')->with(['useroutfit' => $useroutfit]);
+    }
 }

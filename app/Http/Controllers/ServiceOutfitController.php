@@ -17,4 +17,20 @@ class ServiceOutfitController extends Controller
     {
         return $serviceoutfit->get();
     }
+    
+    /**
+     * Service_outfitを表示する
+     * 
+     * @param Service_outfit Service_outfitモデル
+     * @return array Service_outfitモデルリスト
+     */
+    public function show(Service_outfit $serviceoutfit)
+    {
+        return view('serviceoutfit')->with(['serviceoutfit' => $serviceoutfit]);
+    }
+    
+    public function create()
+    {
+        return view('create');
+    }
 }

@@ -16,13 +16,18 @@ Route::get('/', 'HomeController@__index');
 //Authファサードのroutesメソッドは"Vendor\laravel\Framework\Src\Illuminate\Support\Facades\Auth"に記載
 Auth::routes();
 
+//ServiceOutfit投稿へのルーティング
+Route::get('/serviceoutfits/create', 'ServiceOutfitController@create');
 
 //”/useroutfit”へのルーティング
 Route::get('/useroutfit', 'UserOutfitController@index');
+Route::get('/useroutfits/{useroutfit}', 'UserOutfitController@show');
 //”/useroutfit”へのルーティング
 Route::get('/serviceoutfit', 'ServiceOutfitController@index');
+Route::get('/serviceoutfits/{serviceoutfit}', 'ServiceOutfitController@show');
 //”/story”へのルーティング
 Route::get('/story', 'StoryController@index');
+Route::get('/stories/{story}', 'StoryController@show');
 
 //”/home”へのルーティング
 Route::get('/home', 'HomeController@index')->name('home');
