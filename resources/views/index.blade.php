@@ -99,6 +99,9 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="paginate">
+                    {{ $useroutfits->links() }}
+                </div>
                 
                 <div class='serviceoutfits'>
                     @foreach ($serviceoutfits as $serviceoutfit)
@@ -110,6 +113,9 @@
                         </div>
                     @endforeach
                 </div>
+                <div class="paginate">
+                    {{ $serviceoutfits->links() }}
+                </div>
                 
                 <div class='stories'>
                      @foreach ($stories as $story)
@@ -120,6 +126,9 @@
                             <p>{{ $story->content }}</p>
                         </div>
                     @endforeach
+                </div>
+                <div class="paginate">
+                    {{ $stories->links() }}
                 </div>
             </div>
         </div>

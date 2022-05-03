@@ -38,11 +38,11 @@ class HomeController extends Controller
      * @return array Service_outfitモデルリスト
      */
     public function __index() {
-        $useroutfit = User_outfit::Paginate(5, ['*'], 'useroutfit')
+        $useroutfit = User_outfit::Paginate(3, ['*'], 'useroutfit')
             ->appends(['serviceoutfit' => \Request::get('serviceoutfit')]);
-        $serviceoutfit = Service_outfit::Paginate(5, ['*'], 'serviceoutfit')
+        $serviceoutfit = Service_outfit::Paginate(3, ['*'], 'serviceoutfit')
             ->appends(['useroutfit' => \Request::get('useroutfit')]);
-        $story = Story::Paginate(5, ['*'], 'story')
+        $story = Story::Paginate(3, ['*'], 'story')
             ->appends(['serviceoutfit' => \Request::get('serviceoutfit')]);
 
         return view('index',[

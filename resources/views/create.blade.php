@@ -80,7 +80,7 @@
             @endif
             
             <div class='_content'>
-                <h1 class='_title m-b-md'>投稿</h1>
+                <h1 class='_title m-b-md'>Userコーデ投稿</h1>
                 <form action="/useroutfits" method="POST">
                     @csrf
                     <div class="title">
@@ -88,12 +88,12 @@
                         <input type="text" name="useroutfit[title]" placeholder="タイトル"/>
                     </div>
                     <div class="content">
-                        <h2>content</h2>
+                        <h2>コメント</h2>
                         <textarea name="useroutfit[content]" placeholder="今日も1日お疲れさまでした。"></textarea>
                     </div>
                     <input type="submit" value="保存"/>
                 </form>
-                <div class="content">[<a href="/">back</a>]</div>
+                <div class="_content">[<a href="/">back</a>]</div>
             </div>
         </div>
     </body>

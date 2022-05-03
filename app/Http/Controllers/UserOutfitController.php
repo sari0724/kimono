@@ -15,7 +15,8 @@ class UserOutfitController extends Controller
      */
     public function index(User_outfit $useroutfit)
     {
-        return $useroutfit->get();
+        //User_outfit.phpで表示件数の制限
+        return view('index')->with(['useroutfit' => $useroutfit->getPaginateByLimit()]);
     }
     
     public function show(User_outfit $useroutfit)
@@ -28,6 +29,11 @@ class UserOutfitController extends Controller
         return view('create');
     }
     
+    /**
+     * Userコーデを作成投稿する
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     */
     public function store(User_outfit $useroutfit, Request $request)
     {
         //dd($request->all());
