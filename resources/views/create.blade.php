@@ -85,11 +85,13 @@
                     @csrf
                     <div class="title">
                         <h2>タイトル</h2>
-                        <input type="text" name="useroutfit[title]" placeholder="タイトル"/>
+                        <input type="text" name="useroutfit[title]" placeholder="タイトル" value="{{ old('useroutfit.title') }}"/>
+                        <p class="title__error" style="color:red">{{ $errors->first('useroutfit.title') }}</p>
                     </div>
                     <div class="content">
                         <h2>コメント</h2>
-                        <textarea name="useroutfit[content]" placeholder="今日も1日お疲れさまでした。"></textarea>
+                        <textarea name="useroutfit[content]" placeholder="今日も1日お疲れさまでした。">{{ old('useroutfit.conten') }}</textarea>
+                        <p class="content__error" style="color:red">{{ $errors->first('useroutfit.content') }}</p>
                     </div>
                     <input type="submit" value="保存"/>
                 </form>

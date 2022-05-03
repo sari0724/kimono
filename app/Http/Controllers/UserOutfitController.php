@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User_outfit;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
 
 class UserOutfitController extends Controller
 {
@@ -32,9 +33,9 @@ class UserOutfitController extends Controller
     /**
      * Userコーデを作成投稿する
      * 
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request\PostRequest  $request
      */
-    public function store(User_outfit $useroutfit, Request $request)
+    public function store(User_outfit $useroutfit, PostRequest $request)
     {
         //dd($request->all());
         $input = $request['useroutfit'];
