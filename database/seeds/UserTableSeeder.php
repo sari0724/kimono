@@ -12,9 +12,9 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => '名無し',
-            'email' => 'Nanashi@gmail.com',
-            'password' => 'Nanashi',
+            'name' => '名無し_',
+            'email' => 'Nanashi_@gmail.com',
+            'password' => 'Nanashi_',
             'img_name' => '',
             'created_at' => date('Y-m-d H:i:s'),
             'deleted_at' => date('Y-m-d H:i:s'),
